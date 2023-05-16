@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <header class="header">
+    <h2> list cart </h2>
+    <a href="../html/shop.html">Trang chủ</a>
+</header>  
+  <div class="product" id="product">
+  </div>
+
+  <div style="font-size: 50px;" id="total">
+    Tổng tiền: <span id="money"> </span>
+  </div>
+  <script>
+    const VND = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+      });
+      // console.log('Việt Nam đồng: ' + VND.format(price));
+    function renderCart() {
+      let total=0;
+      let dataCart = JSON.parse(localStorage.getItem("listProductCart"));
+      if (dataCart == null) {
+        dataCart = [];
+      }
+      let result = "";
+      for (let i = 0; i < dataCart.length; i++) {
+        result +=
+          `
+                <div class="element">
+                    <img class="image" src="${dataCart[i].img}" alt=" />
+                    <p class="nameproduct"></p>
+                    <span id="price" class="price" style="color: #1939bc">${dataCart[i].price*dataCart[i].sl} VNĐ/</span>
+                    <div class="buyandsell">
+                        <button onclick=downSoLuong(${dataCart[i].id})  class="sell">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <span class="numbers" style="font-size: 25px">${dataCart[i].sl}</span>
+                        <button onclick=upSoLuong(${dataCart[i].id}) class="buy"><i  class="fa-solid fa-plus"></i></button>
+                    </div>
+                 </div> 
+                `
+                total+= dataCart[i].price * dataCart[i].sl;
+      }
+      let resultMoney = VND.format(total);
+      document.getElementById("product").innerHTML = result;
+      document.getElementById("money").innerHTML = resultMoney;
+    }
+    renderCart();
+
+    function upSoLuong(idProduct) {
+      // console.log("111111id", id);
+      let dataCart = JSON.parse(localStorage.getItem("listProductCart"));
+      for (let i = 0; i < dataCart.length; i++) {
+        if (dataCart[i].id == idProduct) {
+          dataCart[i].sl = ++dataCart[i].sl;
+          localStorage.setItem("listProductCart", JSON.stringify(dataCart));
+          renderCart();
+          break;
+        }
+      }
+    }
+    function downSoLuong(idProduct) {
+      let dataCart = JSON.parse(localStorage.getItem("listProductCart"));
+      for (let i = 0; i < dataCart.length; i++) {
+        if (dataCart[i].id == idProduct) {
+          if(dataCart[i].sl==1){
+            let confirm1 =confirm("Bạn có muốn xoá sản phẩm khỏi giỏ hàng");
+            if(confirm1){
+              dataCart.splice(dataCart[i],1);
+              localStorage.setItem("listProductCart", JSON.stringify(dataCart));
+              renderCart();
+              break;
+            }else{
+              return;
+            }
+          }
+          dataCart[i].sl = --dataCart[i].sl;
+          localStorage.setItem("listProductCart", JSON.stringify(dataCart));
+          renderCart();
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

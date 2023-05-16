@@ -1,0 +1,109 @@
+html{
+    background-image: linear-gradient(-90deg, rgb(16, 19, 218), rgb(149, 140, 186), rgb(145, 2, 248));
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(27, 13, 17);
+ border-radius: 10px;
+ position: fixed;
+ top: 0;
+ width: 100%;
+margin-bottom:1000px;
+}
+.logout{
+    background-color: rgb(238, 11, 33);
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    font-size:large;
+   margin-top: 15px;
+   padding-top: 10px;
+}
+
+.element{
+    border: 2px solid red;
+    width: 400px;
+    background-image: linear-gradient(-90deg, rgb(16, 19, 218), rgb(149, 140, 186), rgb(145, 2, 248));
+    text-align: center;
+}
+#product{
+    display: grid;
+    grid-template-columns: 400px 400px 400px ;
+    grid-template-rows: 430px 430px 430px  ;
+    gap: 100px;
+    row-gap: 100px;
+    margin-top: 300px;
+    padding-left: 55px;
+    
+}
+.nameproduct{
+    text-align: center;
+    font-size: 25px;
+}
+.price{
+    font-size: x-large;
+    color: beige;
+    text-align: center;
+}
+.image{
+    width: 100%;
+}
+.element button{
+    width: 130px;
+    font-size: 20px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 40px;
+}
+.element button:hover{
+    background-color: brown;
+}
+.footer{
+    text-align: center;
+    background-color:rgb(0 0 0 / 70%);;
+    margin-top: 70px;
+   display: flex;
+   margin-top: 100px;
+}
+.footer-1{
+    width: 33%;
+    color: aliceblue;
+    font-size: 18px;
+}
+.footer-2{
+    width: 33%;
+}
+.footer-3{
+    width: 34%;
+    text-align: left;
+    padding-left: 80px;
+    font-size: x-large;
+    color: beige;
+}
+.footer-size{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color:#fdb603;
+}
+.css-hr{
+    background-color: #fd0303;
+}
+.cart-2{
+    background-color: #050000;
+    font-size: x-large;
+    height: 50px;
+    padding-top: 20px;
+}
+.fa-solid fa-cart-shopping{
+    font-size: 20px;
+}
+#cart{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 700px;
+}
+
+
+

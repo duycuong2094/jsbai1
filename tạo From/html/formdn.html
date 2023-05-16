@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/from.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <title>Đăng Nhập - Đăng Ký</title>
+</head>
+
+<body>
+    <div id="container">
+            <ac action="" id="Loginname">
+            <h1 class="login" >Đăng Nhập</h1>
+            <div class="formlogin">
+                <i class="fa-solid fa-user"></i>
+                <input id="username" type="text" class="frominput" placeholder="Tên Đăng Nhập">
+            </div>
+            <div class="formlogin">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" class="frominput" id="password" placeholder="Nhập Mật Khẩu">
+                <div id="eyes">
+                    <i onclick="eyes()" id="eye" class="fa-regular fa-eye"></i>
+                </div>
+            </div>
+            <div style="color: aliceblue;"> <input name="gender" type="radio" value="" />Tôi đồng ý với điều khoản sử dụng</div>
+            <input type="submit" value=" Đăng Nhập" class="formsumit" id="register">
+            <div class="fromregister">
+                <u style="color: aliceblue;">Bạn chưa có tài khoản ?</u>
+                <a href="./formdk.html"  type="submit" value="Đăng Ký" class="fromregister-dk"> Đăng ký
+            </div>
+        </form>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+
+</html>

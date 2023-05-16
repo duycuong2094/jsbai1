@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/from.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <title>Đăng nhập- Đăng ký</title>
+</head>
+
+<body>
+    <div id="container">
+        <form onsubmit="onregister" action="" id="Loginname">
+            <h1 class="login" style="color: red;">Đăng Ký</h1>
+            <div class="formlogin">
+                <i class="fa-solid fa-user"></i>
+                <input id="username" type="text" class="frominput" placeholder="Tên Đăng Nhập">
+            </div>
+            <div class="formlogin">
+                <i class="fa-solid fa-envelope"></i>
+                <input id="email" type="email" class="frominput" placeholder="Email">
+            </div>
+            <div class="formlogin">
+                <i class="fa-solid fa-key"></i>
+                <input id="passwordd" type="password" class="frominput" placeholder="Nhập  mật khẩu">
+            </div>
+            <div class="formlogin">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" class="frominput" id="password" placeholder="Nhập Lại Mật Khẩu">
+                <div id="eyes">
+                    <i onclick="eyes()" id="eye" class="fa-regular fa-eye"></i>
+                </div>
+            </div>
+            <div style="color: blanchedalmond;"><input name="gender" type="radio" value="" />Tôi đồng ý với điều khoản sử dụng</div>
+            <input onclick="sigup()" type="submit"id="register" style="color: rgb(237, 235, 243);" value=" Đăng kí" class="formsumit">
+            <div class="fromregister">
+                <a href="./formdn.html" id="register" type="submit" value="Đăng Nhập" class="fromregister-dk"> Đăng
+                    Nhập
+            </div>
+        </form>
+    </div>
+    <script src="../js/register.js">
+       
+    </script>
+</body>
+
+
+</html>
